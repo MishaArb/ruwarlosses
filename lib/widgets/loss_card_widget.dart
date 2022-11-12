@@ -18,29 +18,25 @@ class LossCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: const Border(
-        bottom: BorderSide(
-            color: Color.fromARGB(255,63, 83, 107),
-            width: 0.5
-        ),
-      ),
+      elevation: 0,
       color: const Color.fromARGB(255,  37, 43, 48),
       child: ListTile(
-        // contentPadding: EdgeInsets.all(0),
-        // shape: Border(
-        //   bottom: BorderSide(width: 0, color: Colors.grey),
-        //   top: BorderSide(width: 0, color: Colors.grey),
-        // ),
+        contentPadding: EdgeInsets.all(0),
+        shape: const Border(
+          bottom: BorderSide(width: 0, color: const Color.fromARGB(255,  111, 115, 119)),
+           ),
+
+        dense: true,
         leading: Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 45, 57, 63),
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(15),
           ),
           child: Image(
             image: AssetImage(img),
             width: 50,
-            height: 50,
+            height: 60,
           ),
         ),
         title: Row(
@@ -49,13 +45,13 @@ class LossCardWidget extends StatelessWidget {
             Text(
               name,
               style: const TextStyle(
-                color: Color.fromARGB(255, 250, 235, 224),
+                color: Color.fromARGB(255, 235, 241, 235),
                 fontSize: 15,
               ),
             ),
             Text(
               count.toString(),
-              style: const TextStyle(color: Color.fromARGB(255, 250, 235, 224),
+              style: const TextStyle(color: Color.fromARGB(255, 235, 241, 235),
                 fontSize: 15,
               ),
             ),
@@ -68,14 +64,14 @@ class LossCardWidget extends StatelessWidget {
           children:  [
             const Text(
               'Кількість за добу',
-              style:  TextStyle(color: Color.fromARGB(255, 116, 115, 122),
+              style:  TextStyle(color: Color.fromARGB(150, 135, 128, 103),
                 fontSize: 15,
               ),
             ),
             Text(
               difference > 0 ?
               '+$difference':' $difference',
-              style:   TextStyle(color:  difference > 0 ?Colors.green : Colors.white,
+              style:   TextStyle(color:  difference > 0 ?const Color.fromARGB(255, 60, 152, 89) : const Color.fromARGB(255, 235, 241, 235),
                 fontSize: 15,
               ),
             ),

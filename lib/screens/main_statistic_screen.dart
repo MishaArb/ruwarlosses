@@ -80,11 +80,11 @@ class _MainStatisticScreenState extends State<MainStatisticScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    // const SizedBox(
+                    //   height: 20,
+                    // ),
                     Container(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.only(top: 15, bottom: 10),
                       child: const DonateWidget(),
                     ),
                     // const SizedBox(height: 20,),
@@ -103,12 +103,10 @@ class _MainStatisticScreenState extends State<MainStatisticScreen> {
                             ? Row(
                                 children: [
                                   IconButton(
-
                                     onPressed: () {
                                     if(indexDate > 1){
                                         context.read<ChangeDateBloc>().add(DecrementDateEvent());
                                       }
-
                                     },
                                     icon: const Icon(
                                       Icons.arrow_circle_left_outlined,
@@ -116,9 +114,9 @@ class _MainStatisticScreenState extends State<MainStatisticScreen> {
                                     ),
                                   ),
                                   Text(
-                                    '${state.listLosses[0].dataLosses[indexDate]['at']}',
+                                    '${state.listLosses[0].dataLosses[indexDate]['at'].split('-').reversed.join('-')}',
                                     style: const TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.bold,
                                       color: Color.fromARGB(255, 220, 198, 67),
                                     ),

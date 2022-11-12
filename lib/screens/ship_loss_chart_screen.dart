@@ -16,13 +16,13 @@ class ShipLossChartScreen extends StatelessWidget {
     double heightWithoutappBarNavBar = MediaQuery.of(context).size.height - (MediaQuery.of(context).padding.top + kToolbarHeight + kBottomNavigationBarHeight);
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(color: Color.fromARGB(255, 135, 128, 103)),
+        leading: const BackButton(color: Color.fromARGB(255, 235, 241, 235)),
         centerTitle: true,
-        title: const Text('Кораблі/катери', style: TextStyle(color: Color.fromARGB(255, 135, 128, 103)),),
+        title: const Text('Кораблі/катери', style: TextStyle(color: Color.fromARGB(255, 235, 241, 235)),),
         elevation: 0.0,
-        backgroundColor: const Color.fromARGB(255, 42, 43, 54),
+        backgroundColor: const Color.fromARGB(255,   37, 43, 48),
       ),
-      backgroundColor: const Color.fromARGB(255, 42, 43, 54),
+      backgroundColor:const Color.fromARGB(255,   37, 43, 48),
       body: BlocBuilder<LossesDataBloc, LossesDataState>(
         builder: (context, state) {
           return BlocBuilder<ChartDataBloc, ChartDataState>(
@@ -65,7 +65,7 @@ class ShipLossChartScreen extends StatelessWidget {
                     child: Container(
                       width: 39.9,
                       height: heightWithoutappBarNavBar,
-                      color: const Color.fromARGB(255, 42, 43, 54),
+                      color: const Color.fromARGB(255,   37, 43, 48),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
@@ -107,7 +107,7 @@ class ShipLossChartScreen extends StatelessWidget {
                     child: Container(
                       width: 34,
                       height:  heightWithoutappBarNavBar,
-                      color: const Color.fromARGB(255,42, 43, 54),
+                      color: const Color.fromARGB(255,   37, 43, 48),
                       // color: Colors.red,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
