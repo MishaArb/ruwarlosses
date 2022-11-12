@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
+
+import 'logic/chart_data_bloc.dart';
 import 'logic/losses_data_bloc.dart';
 import 'logic/change_date_bloc.dart';
 import 'screens/main_statistic_screen.dart';
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MultiBlocProvider(
       providers: [
         BlocProvider<ChangeDateBloc>(
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<LossesDataBloc>(
           create: (BuildContext context) => LossesDataBloc(),
         ),
+        BlocProvider<ChartDataBloc>(
+          create: (BuildContext context) => ChartDataBloc(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -37,7 +43,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MainStatisticScreen(),
+        home: const MainStatisticScreen()
+        //PeopleLossChartScreen()
+        //MainStatisticScreen(),
       ),
     );
   }
