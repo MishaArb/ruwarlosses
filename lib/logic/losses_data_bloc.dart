@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
@@ -34,9 +33,9 @@ class LossesDataBloc extends Bloc<LossesDataEvent, LossesDataState> {
         }
       }
       // Добавив дані за дні які відсутні в json (артилерія, рсзв, ппо)
-      responseUrl[3].dataLosses.insertAll(0, [{'at': 2022-02-27, 'val': 49}, {'at': 2022-02-28, 'val': 74},]);
-      responseUrl[4].dataLosses.insertAll(0, [{'at': 2022-02-27, 'val': 4}, {'at': 2022-02-28, 'val': 21},]);
-      responseUrl[5].dataLosses.insertAll(0, [{'at': 2022-02-27, 'val': 1}, {'at': 2022-02-28, 'val': 5},]);
+      responseUrl[3].dataLosses.insertAll(0, [{'at': '2022-02-27', 'val': 49}, {'at': '2022-02-28', 'val': 74},]);
+      responseUrl[4].dataLosses.insertAll(0, [{'at': '2022-02-27', 'val': 4}, {'at': '2022-02-28', 'val': 21},]);
+      responseUrl[5].dataLosses.insertAll(0, [{'at': '2022-02-27', 'val': 1},]);
 
       emit(LoadedLossesDataState( state.listLosses = responseUrl));
 

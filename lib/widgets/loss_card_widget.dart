@@ -13,6 +13,7 @@ class LossCardWidget extends StatelessWidget {
   final String name;
   final int count;
   final int difference;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class LossCardWidget extends StatelessWidget {
             width: 0.5
         ),
       ),
-      color: const Color.fromARGB(255,  43, 68, 93),
+      color: const Color.fromARGB(255,  37, 43, 48),
       child: ListTile(
         // contentPadding: EdgeInsets.all(0),
         // shape: Border(
@@ -33,7 +34,7 @@ class LossCardWidget extends StatelessWidget {
         leading: Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 60, 83, 107),
+            color: const Color.fromARGB(255, 45, 57, 63),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Image(
