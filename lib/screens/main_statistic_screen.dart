@@ -85,7 +85,7 @@ class _MainStatisticScreenState extends State<MainStatisticScreen> {
                     // ),
                     Container(
                       padding: const EdgeInsets.only(top: 15, bottom: 10),
-                      child: const DonateWidget(),
+                      child:  DonateWidget(),
                     ),
                     // const SizedBox(height: 20,),
                     Row(
