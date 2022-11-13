@@ -27,11 +27,28 @@ class MainStatisticScreen extends StatefulWidget {
   State<MainStatisticScreen> createState() => _MainStatisticScreenState();
 }
 
-class _MainStatisticScreenState extends State<MainStatisticScreen> {
+class _MainStatisticScreenState extends State<MainStatisticScreen>  with WidgetsBindingObserver{
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state){
+    if(state == AppLifecycleState.resumed){
+      context.read<LossesDataBloc>().add(LoadLossesDataEvent());
+    }
+    super.didChangeAppLifecycleState(state);
+  }
+
+
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     context.read<LossesDataBloc>().add(LoadLossesDataEvent());
+
+  }
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
   }
 
   @override
