@@ -6,11 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 
+import 'generated/l10n.dart';
 import 'logic/chart_data_bloc.dart';
 import 'logic/losses_data_bloc.dart';
 import 'logic/change_date_bloc.dart';
-import 'screens/main_statistic_screen.dart';
-
+import 'main_statistic_screen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 class MyHttpOverrides extends HttpOverrides{
   @override
   HttpClient createHttpClient(SecurityContext? context){
@@ -19,7 +20,7 @@ class MyHttpOverrides extends HttpOverrides{
   }
 }
 
-
+var s;
 void main() {
   HttpOverrides.global = new MyHttpOverrides();
   runApp(const MyApp());
@@ -55,6 +56,17 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('en', ''), // English, no country code
+            Locale('uk', ''), // Spanish, no country code
+            Locale('ru', ''), // Spanish, no country code
+          ],
         home: const MainStatisticScreen()
         //PeopleLossChartScreen()
         //MainStatisticScreen(),

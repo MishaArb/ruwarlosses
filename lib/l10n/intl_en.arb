@@ -1,0 +1,16 @@
+{
+  "helpArmy" : "Help army",
+  "ruLosses" : "russia's losses",
+  "personnel" : "Personnel",
+  "tanks" : "Tanks",
+  "bbm" : "Armored combat vehicles",
+  "artillery" : "Artillery systems",
+  "mlrs" : "MLRS",
+  "ads" : "Air defense systems",
+  "aircrafts" : "Aircrafts",
+  "helicopters" : "Helicopters",
+  "drone" : "Tactical Unmanned Aircraft",
+  "ship" : "Ship and boasts",
+  "tankers" : "Fuel tankers and vehicles",
+  "wuantityDay" : "Quantity per day"
+}

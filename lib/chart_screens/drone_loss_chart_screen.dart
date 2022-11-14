@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../generated/l10n.dart';
 import '../logic/chart_data_bloc.dart';
 import '../logic/losses_data_bloc.dart';
 import '../widgets/chart_widget.dart';
 
 
-class ShipLossChartScreen extends StatelessWidget {
-  const ShipLossChartScreen({Key? key}) : super(key: key);
+class DroneLossChartScreen extends StatelessWidget {
+  const DroneLossChartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class ShipLossChartScreen extends StatelessWidget {
       appBar: AppBar(
         leading: const BackButton(color: Color.fromARGB(255, 235, 241, 235)),
         centerTitle: true,
-        title: const Text('Кораблі/катери', style: TextStyle(color: Color.fromARGB(255, 235, 241, 235)),),
+        title:  Text(S.of(context).drone, style: TextStyle(color: Color.fromARGB(255, 235, 241, 235)),),
         elevation: 0.0,
         backgroundColor: const Color.fromARGB(255,   37, 43, 48),
       ),
@@ -53,7 +54,7 @@ class ShipLossChartScreen extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) {
                         return ChartWidget(
                           // Використовував .reversed.toList() для того щоб список починався з кінця
-                          stateCD.dataLosses!.reversed.toList()[index].toDouble(),
+                        stateCD.dataLosses!.reversed.toList()[index].toDouble(),
                             state.listLosses[0].dataLosses.reversed.toList()[index + 1]['at'],
                             heightWithoutappBarNavBar,
                             stateCD.maxValue!);
