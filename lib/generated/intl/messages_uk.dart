@@ -21,23 +21,5 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'uk';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "ads": MessageLookupByLibrary.simpleMessage("ППО"),
-        "aircrafts": MessageLookupByLibrary.simpleMessage("Літаки"),
-        "artillery":
-            MessageLookupByLibrary.simpleMessage("Артилерійські системи"),
-        "bbm": MessageLookupByLibrary.simpleMessage("ББМ"),
-        "drone": MessageLookupByLibrary.simpleMessage("БПЛА"),
-        "helicopters": MessageLookupByLibrary.simpleMessage("Гелікоптери"),
-        "helpArmy": MessageLookupByLibrary.simpleMessage("Допомога армії"),
-        "mlrs": MessageLookupByLibrary.simpleMessage("РСЗВ"),
-        "personnel": MessageLookupByLibrary.simpleMessage("Особовий склад"),
-        "ruLosses": MessageLookupByLibrary.simpleMessage("Втрати росії"),
-        "ship": MessageLookupByLibrary.simpleMessage("Кораблі та катери"),
-        "tankers":
-            MessageLookupByLibrary.simpleMessage("Автоцистерни та автотехніка"),
-        "tanks": MessageLookupByLibrary.simpleMessage("Танки"),
-        "wuantityDay":
-            MessageLookupByLibrary.simpleMessage("Количество за день")
-      };
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
 }
