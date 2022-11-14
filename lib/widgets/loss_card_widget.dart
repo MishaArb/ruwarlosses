@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../generated/l10n.dart';
+
 class LossCardWidget extends StatelessWidget {
   const LossCardWidget({
     Key? key,
@@ -23,7 +25,7 @@ class LossCardWidget extends StatelessWidget {
       child: ListTile(
         contentPadding: EdgeInsets.all(0),
         shape: const Border(
-          bottom: BorderSide(width: 0, color: const Color.fromARGB(255,  111, 115, 119)),
+          bottom: BorderSide(width: 0, color: Color.fromARGB(255,  111, 115, 119)),
            ),
 
         dense: true,
@@ -58,13 +60,12 @@ class LossCardWidget extends StatelessWidget {
 
           ],
         ),
-        // isThreeLine: true,
-        subtitle:            Row(
+        subtitle: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children:  [
-            const Text(
-              'Кількість за добу',
-              style:  TextStyle(color: Color.fromARGB(150, 135, 128, 103),
+             Text(
+              S.of(context).wuantityDay,
+              style:  const TextStyle(color: Color.fromARGB(150, 135, 128, 103),
                 fontSize: 15,
               ),
             ),
