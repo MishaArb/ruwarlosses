@@ -18,21 +18,6 @@ class DonateWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(children: [
       Expanded(
-        child: GestureDetector(
-          onTap: ()=> _launchUrl(uri: Uri.parse('https://markusfoundation.com/')),
-          child: Container(
-            height: 60,
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(color: const Color.fromARGB(255, 48, 51, 57),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: const Image(image: AssetImage('images/markus.png')),
-          ),
-        ),
-      ),
-      const SizedBox(width: 10,),
-
-      Expanded(
         child:  GestureDetector(
           onTap: ()=> _launchUrl(uri: Uri.parse('https://savelife.in.ua/')),
           child: Container(
@@ -46,6 +31,21 @@ class DonateWidget extends StatelessWidget {
           ),
         ),
       ),
+      const SizedBox(width: 10,),
+      Expanded(
+        child: GestureDetector(
+          onTap: ()=> _launchUrl(uri: Uri.parse('https://markusfoundation.com/')),
+          child: Container(
+            height: 60,
+            padding: const EdgeInsets.all(5),
+            decoration: BoxDecoration(color: const Color.fromARGB(255, 48, 51, 57),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Image(image: AssetImage('images/markus.png')),
+          ),
+        ),
+      ),
+
       const SizedBox(width: 10,),
       Expanded(
           child:  GestureDetector(
