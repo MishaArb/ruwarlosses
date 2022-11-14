@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../generated/l10n.dart';
 import '../logic/chart_data_bloc.dart';
 import '../logic/losses_data_bloc.dart';
 import '../widgets/chart_widget.dart';
 
 
-class ADSLossChartScreen extends StatelessWidget {
-  const ADSLossChartScreen({Key? key}) : super(key: key);
+class MLRSLossChartScreen extends StatelessWidget {
+  const MLRSLossChartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,9 @@ class ADSLossChartScreen extends StatelessWidget {
     double heightWithoutappBarNavBar = MediaQuery.of(context).size.height - (MediaQuery.of(context).padding.top + kToolbarHeight + kBottomNavigationBarHeight);
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(color:Color.fromARGB(255, 235, 241, 235)),
+        leading: const BackButton(color: Color.fromARGB(255, 235, 241, 235)),
         centerTitle: true,
-        title: const Text('ППО', style: TextStyle(color: Color.fromARGB(255, 235, 241, 235)),),
+        title:  Text(S.of(context).mlrs, style: TextStyle(color:Color.fromARGB(255, 235, 241, 235)),),
         elevation: 0.0,
         backgroundColor: const Color.fromARGB(255,   37, 43, 48),
       ),
@@ -52,7 +53,8 @@ class ADSLossChartScreen extends StatelessWidget {
                       itemCount: state.listLosses[0].dataLosses.length - 1,
                       itemBuilder: (BuildContext context, int index) {
                         return ChartWidget(
-                            stateCD.dataLosses!.reversed.toList()[index].toDouble(),
+                          // Використовував .reversed.toList() для того щоб список починався з кінця
+                           stateCD.dataLosses!.reversed.toList()[index].toDouble(),
                             state.listLosses[0].dataLosses.reversed.toList()[index + 1]['at'],
                             heightWithoutappBarNavBar,
                             stateCD.maxValue!);

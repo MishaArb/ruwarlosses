@@ -1,9 +1,8 @@
-import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../screens/main_statistic_screen.dart';
+import '../main_statistic_screen.dart';
 
 part 'change_date_event.dart';
 part 'change_date_state.dart';

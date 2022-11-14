@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../generated/l10n.dart';
 import '../logic/chart_data_bloc.dart';
 import '../logic/losses_data_bloc.dart';
 import '../widgets/chart_widget.dart';
 
 
-class PeopleLossChartScreen extends StatelessWidget {
-  const PeopleLossChartScreen({Key? key}) : super(key: key);
+class AirplaneLossChartScreen extends StatelessWidget {
+  const AirplaneLossChartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +19,13 @@ class PeopleLossChartScreen extends StatelessWidget {
       appBar: AppBar(
         leading: const BackButton(color: Color.fromARGB(255, 235, 241, 235)),
         centerTitle: true,
-        title: const Text('Особовий склад', style: TextStyle(color: Color.fromARGB(255, 235, 241, 235)),),
+        title: Text(S.of(context).aircrafts, style: TextStyle(color: Color.fromARGB(255, 235, 241, 235)),),
         elevation: 0.0,
         backgroundColor: const Color.fromARGB(255,   37, 43, 48),
       ),
       backgroundColor: const Color.fromARGB(255,   37, 43, 48),
       body: BlocBuilder<LossesDataBloc, LossesDataState>(
-      builder: (context, state) {
+        builder: (context, state) {
           return BlocBuilder<ChartDataBloc, ChartDataState>(
             builder: (context, stateCD) {
               return Stack(
@@ -51,9 +52,9 @@ class PeopleLossChartScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: state.listLosses[0].dataLosses.length - 1,
                       itemBuilder: (BuildContext context, int index) {
-                      return ChartWidget(
-                        // Використовував .reversed.toList() для того щоб список починався з кінця
-                            stateCD.dataLosses!.reversed.toList()[index].toDouble(),
+                        return ChartWidget(
+                          // Використовував .reversed.toList() для того щоб список починався з кінця
+                        stateCD.dataLosses!.reversed.toList()[index].toDouble(),
                             state.listLosses[0].dataLosses.reversed.toList()[index + 1]['at'],
                             heightWithoutappBarNavBar,
                             stateCD.maxValue!);
@@ -107,7 +108,7 @@ class PeopleLossChartScreen extends StatelessWidget {
                     child: Container(
                       width: 34,
                       height:  heightWithoutappBarNavBar,
-                       color: const Color.fromARGB(255,   37, 43, 48),
+                      color: const Color.fromARGB(255,   37, 43, 48),
                       // color: Colors.red,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,8 +124,8 @@ class PeopleLossChartScreen extends StatelessWidget {
 
                 ],
               );
-  },
-);
+            },
+          );
         },
       ),
     );
