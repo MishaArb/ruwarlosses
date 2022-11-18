@@ -176,7 +176,8 @@ class _MainStatisticScreenState extends State<MainStatisticScreen>  with Widgets
                           onTap: () {
                             context.read<ChartDataBloc>().add(LoadDataEvent( state.listLosses[2].dataLosses));
                             Navigator.push(context, MaterialPageRoute(builder: (context) => const BBMLossChartScreen()));
-                          },child: LossCardWidget(img: 'images/bmp.png', name: S.of(context).bbm, count:state.listLosses[2].dataLosses[indexDate]['val'], difference: state.listLosses[2].dataLosses[indexDate]['val']- state.listLosses[2].dataLosses[indexDate-1]['val'],)),
+                            // Помилка в загальній кількості втрат і також неправильно був підрахунок втрат за добу. Виправив додавши до indexDate+2
+                          },child: LossCardWidget(img: 'images/bmp.png', name: S.of(context).bbm, count:state.listLosses[2].dataLosses[indexDate+2]['val'], difference: state.listLosses[2].dataLosses[indexDate+2]['val']- state.listLosses[2].dataLosses[indexDate+1]['val'],)),
                       GestureDetector(
                           onTap: () {
                             context.read<ChartDataBloc>().add(LoadDataEvent( state.listLosses[3].dataLosses));
