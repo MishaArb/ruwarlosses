@@ -38,6 +38,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Автоцистерни та автотехніка"),
         "tanks": MessageLookupByLibrary.simpleMessage("Танки"),
         "wuantityDay":
-            MessageLookupByLibrary.simpleMessage("Количество за день")
+            MessageLookupByLibrary.simpleMessage("Кількість втрат за добу")
       };
 }
