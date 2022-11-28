@@ -29,7 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "drone":
             MessageLookupByLibrary.simpleMessage("Tactical Unmanned Aircraft"),
         "helicopters": MessageLookupByLibrary.simpleMessage("Helicopters"),
-        "helpArmy": MessageLookupByLibrary.simpleMessage("Help army"),
+        "helpArmy": MessageLookupByLibrary.simpleMessage("Donate to Army"),
         "mlrs": MessageLookupByLibrary.simpleMessage("MLRS"),
         "personnel": MessageLookupByLibrary.simpleMessage("Personnel"),
         "ruLosses": MessageLookupByLibrary.simpleMessage("russia\'s losses"),
