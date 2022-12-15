@@ -7,9 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 import 'generated/l10n.dart';
-import 'logic/chart_data_bloc.dart';
+import 'logic/chart_bloc.dart';
 import 'logic/losses_data_bloc.dart';
-import 'logic/change_date_bloc.dart';
+import 'logic/date_bloc.dart';
 import 'main_statistic_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 class MyHttpOverrides extends HttpOverrides{
@@ -40,14 +40,14 @@ class MyApp extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ChangeDateBloc>(
-          create: (BuildContext context) => ChangeDateBloc(),
+        BlocProvider<DateBloc>(
+          create: (BuildContext context) => DateBloc(),
         ),
         BlocProvider<LossesDataBloc>(
           create: (BuildContext context) => LossesDataBloc(),
         ),
-        BlocProvider<ChartDataBloc>(
-          create: (BuildContext context) => ChartDataBloc(),
+        BlocProvider<ChartBloc>(
+          create: (BuildContext context) => ChartBloc(),
         ),
       ],
       child: MaterialApp(

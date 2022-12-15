@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../generated/l10n.dart';
-import '../logic/chart_data_bloc.dart';
+import '../logic/chart_bloc.dart';
 import '../logic/losses_data_bloc.dart';
 import '../widgets/chart_widget.dart';
 
@@ -19,14 +19,14 @@ class DroneLossChartScreen extends StatelessWidget {
       appBar: AppBar(
         leading: const BackButton(color: Color.fromARGB(255, 235, 241, 235)),
         centerTitle: true,
-        title:  Text(S.of(context).drone, style: TextStyle(color: Color.fromARGB(255, 235, 241, 235)),),
+        title:  Text(S.of(context).drone, style: const TextStyle(color: Color.fromARGB(255, 235, 241, 235)),),
         elevation: 0.0,
         backgroundColor: const Color.fromARGB(255,   37, 43, 48),
       ),
       backgroundColor:const Color.fromARGB(255,   37, 43, 48),
       body: BlocBuilder<LossesDataBloc, LossesDataState>(
         builder: (context, state) {
-          return BlocBuilder<ChartDataBloc, ChartDataState>(
+          return BlocBuilder<ChartBloc, ChartState>(
             builder: (context, stateCD) {
               return Stack(
                 children: [
@@ -54,10 +54,10 @@ class DroneLossChartScreen extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) {
                         return ChartWidget(
                           // Використовував .reversed.toList() для того щоб список починався з кінця
-                        stateCD.dataLosses!.reversed.toList()[index].toDouble(),
+                        stateCD.dataLosses.reversed.toList()[index].toDouble(),
                             state.listLosses[0].dataLosses.reversed.toList()[index + 1]['at'],
                             heightWithoutappBarNavBar,
-                            stateCD.maxValue!);
+                            stateCD.maxValue);
                       },
                     ),
                   ),
@@ -113,9 +113,9 @@ class DroneLossChartScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children:  [
-                          Text('${stateCD.maxValue!}', style: const TextStyle(fontSize: 10, color: Color.fromARGB(255, 135, 128, 103)),),
-                          Text('${(stateCD.maxValue!*0.66).round()}', style: const TextStyle(fontSize: 10, color: Color.fromARGB(255, 135, 128, 103)),),
-                          Text('${(stateCD.maxValue!*0.33).round()}', style: const TextStyle(fontSize: 10, color: Color.fromARGB(255, 135, 128, 103)),),
+                          Text('${stateCD.maxValue}', style: const TextStyle(fontSize: 10, color: Color.fromARGB(255, 135, 128, 103)),),
+                          Text('${(stateCD.maxValue*0.66).round()}', style: const TextStyle(fontSize: 10, color: Color.fromARGB(255, 135, 128, 103)),),
+                          Text('${(stateCD.maxValue*0.33).round()}', style: const TextStyle(fontSize: 10, color: Color.fromARGB(255, 135, 128, 103)),),
                           const Text('0', style: TextStyle(fontSize: 10, color: Color.fromARGB(255, 135, 128, 103)),),
                         ],
                       ),
