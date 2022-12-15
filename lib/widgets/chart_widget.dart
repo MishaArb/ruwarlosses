@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../logic/chart_data_bloc.dart';
+import '../logic/chart_bloc.dart';
 class ChartWidget extends StatefulWidget {
   const ChartWidget(this.index, this.date, this.heightChart, this.max);
   final double index;
@@ -40,7 +40,7 @@ class _ChartWidgetState extends State<ChartWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ChartDataBloc, ChartDataState>(
+    return BlocBuilder<ChartBloc, ChartState>(
       builder: (context, state) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.end,

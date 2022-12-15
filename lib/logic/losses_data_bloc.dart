@@ -9,7 +9,7 @@ part 'losses_data_event.dart';
 part 'losses_data_state.dart';
 
 class LossesDataBloc extends Bloc<LossesDataEvent, LossesDataState> {
-  LossesDataBloc() : super(LoadingLossesDataState()) {
+  LossesDataBloc() : super(LoadingLossesDataState([])) {
     on<LoadLossesDataEvent>((event, emit) async{
       List<String> url = [
        'https://uadata.net/ukraine-russia-war-2022/people.json',
@@ -37,7 +37,7 @@ class LossesDataBloc extends Bloc<LossesDataEvent, LossesDataState> {
       responseUrl[4].dataLosses.insertAll(0, [{'at': '2022-02-27', 'val': 4}, {'at': '2022-02-28', 'val': 21},]);
       responseUrl[5].dataLosses.insertAll(0, [{'at': '2022-02-27', 'val': 1},]);
 
-      emit(LoadedLossesDataState( state.listLosses = responseUrl));
+      emit(LoadedLossesDataState( responseUrl));
 
     });
   }
